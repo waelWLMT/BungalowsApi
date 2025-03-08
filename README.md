@@ -1,2 +1,3 @@
 # GestionRDV.WebApi
-Gestion RDV est un web api pour une solution de gestion de rendez vous developper en dotnet core.
+Bungalow_wlmt est une solution pour faciliter la recherche d'un logement pour passer un sejour dans une ville bien determiner
+Bunglows permet aux proprietaire de faciliet la location de ses logement ansi que la gestion des responsable sur les bungalows
