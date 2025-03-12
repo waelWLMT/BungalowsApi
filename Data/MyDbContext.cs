@@ -14,26 +14,27 @@ namespace Data
     /// </summary>
     public class MyDbContext : DbContext
     {
-        
-        
-        /// <summary>
-        /// Gets or sets the roles.
-        /// </summary>
+
+        public DbSet<User> Users { get; set; }
+        public DbSet<Admin> Admins { get; set; }
+        public DbSet<Locataire> Locataires { get; set; }
+        public DbSet<Proprietaire> Proprietaires { get; set; }
+        public DbSet<Commercial> Commercials { get; set; }
+        public DbSet<Bungalow> Bungalows { get; set; }
+        public DbSet<Adresse> Adresses { get; set; }
         public DbSet<Role> Roles { get; set; }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MyDbContext"/> class.
-        /// </summary>
-        /// <param name="options">The options.</param>
+
+
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         { }
-        /// <summary>
-        /// On model creating.
-        /// </summary>
-        /// <param name="modelBuilder">The model builder.</param>
+       
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        { 
-            //modelBuilder.ApplyConfiguration(new AppointementConfiguration());        
+        {
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
+            modelBuilder.ApplyConfiguration(new ReservationConfiguration());
+                    
         }
                    
 

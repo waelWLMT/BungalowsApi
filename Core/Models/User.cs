@@ -7,41 +7,23 @@ using System.Threading.Tasks;
 
 namespace Core.Models
 {
-    /// <summary>
-    /// The user account.
-    /// </summary>
+   
     public class User : Entity
     {
-        #region properties
+        #region Properties
 
         public string Nom { get; set; }
-        public string Prenom { get; set; }
-
-        /// <summary>
-        /// Gets or sets the crypted password.
-        /// </summary>
-        public string CryptedPassword { get; set; }
-        /// <summary>
-        /// Gets or sets the login.
-        /// </summary>
-        public string  Login { get; set; }
-        /// <summary>
-        /// Gets or sets the email.
-        /// </summary>
+        public string Prenom { get; set; }        
+        public string CryptedPassword { get; set; }       
+        public string  Login { get; set; }       
         public string Email { get; set; }
+        public bool Active { get; set; }
 
-        /// <summary>
-        /// Gets or sets the role id.
-        /// </summary>
         [ForeignKey(nameof(Role))]
         public int RoleId { get; set; }
         #endregion
 
-        #region navigation properties
-
-        /// <summary>
-        /// Gets or sets the role.
-        /// </summary>
+        #region Navigation properties        
         public Role Role { get; set; }
 
         #endregion

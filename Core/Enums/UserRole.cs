@@ -9,7 +9,8 @@ namespace Core.Enums
     public enum UserRole
     {
         Admin = 1,
-        Praticien = 2,
-        Patient = 3
+        Commerciale = 2,
+        Locataire = 3,
+        Proprietaire =4
     }
 }

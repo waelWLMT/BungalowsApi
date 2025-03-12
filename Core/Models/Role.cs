@@ -8,8 +8,10 @@ namespace Core.Models
 {
     public class Role : Entity
     {
+        #region Properties
         public string Libelle { get; set; }
         public string Code { get; set; }
         public string Description { get; set; }
+        #endregion 
     }
 }
