@@ -10,24 +10,24 @@ using System.Threading.Tasks;
 
 namespace Data.Configurations
 {
-    public class AppointementConfiguration : IEntityTypeConfiguration<Appointement>
-    {
-        public void Configure(EntityTypeBuilder<Appointement> builder)
-        {
+    //public class AppointementConfiguration : IEntityTypeConfiguration<Appointement>
+    //{
+    //    public void Configure(EntityTypeBuilder<Appointement> builder)
+    //    {
 
-            builder.HasOne(x=> x.Patient)
-                .WithMany()
-                .OnDelete(DeleteBehavior.Restrict);
+    //        builder.HasOne(x=> x.Patient)
+    //            .WithMany()
+    //            .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(x => x.Motif)
-                .WithMany()
-                .OnDelete(DeleteBehavior.Restrict);
+    //        builder.HasOne(x => x.Motif)
+    //            .WithMany()
+    //            .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(x => x.Praticien)
-                .WithMany()
-                .OnDelete(DeleteBehavior.Restrict);
+    //        builder.HasOne(x => x.Praticien)
+    //            .WithMany()
+    //            .OnDelete(DeleteBehavior.Restrict);
 
-        }
+    //    }
 
-    }
+    //}
 }

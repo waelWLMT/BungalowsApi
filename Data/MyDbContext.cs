@@ -14,38 +14,8 @@ namespace Data
     /// </summary>
     public class MyDbContext : DbContext
     {
-        /// <summary>
-        /// Gets or sets the user accounts.
-        /// </summary>
-        public DbSet<User> UserAccounts { get; set; }
-        /// <summary>
-        /// Gets or sets the admins.
-        /// </summary>
-        public DbSet<Admin> Admins { get; set; }
-        /// <summary>
-        /// Gets or sets the motifs.
-        /// </summary>
-        public DbSet<Motif> Motifs { get; set; }
-        /// <summary>
-        /// Gets or sets the patients.
-        /// </summary>
-        public DbSet<Patient> Patients { get; set; }
-        /// <summary>
-        /// Gets or sets the praticiens.
-        /// </summary>
-        public DbSet<Praticien> Praticiens { get; set; }
-        /// <summary>
-        /// Gets or sets the specialites.
-        /// </summary>
-        public DbSet<Specialite> Specialites { get; set; }
-        /// <summary>
-        /// Gets or sets the appointements.
-        /// </summary>
-        public DbSet<Appointement> Appointements { get; set; }
-        /// <summary>
-        /// Gets or sets the plannings.
-        /// </summary>
-        public DbSet<Planning> Plannings { get; set; }
+        
+        
         /// <summary>
         /// Gets or sets the roles.
         /// </summary>
@@ -63,7 +33,7 @@ namespace Data
         /// <param name="modelBuilder">The model builder.</param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         { 
-            modelBuilder.ApplyConfiguration(new AppointementConfiguration());        
+            //modelBuilder.ApplyConfiguration(new AppointementConfiguration());        
         }
                    
 
