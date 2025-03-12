@@ -13,10 +13,10 @@ namespace Core.Models
     public class User : Entity
     {
         #region properties
-        /// <summary>
-        /// Gets or sets the user name.
-        /// </summary>
-        public string UserName { get; set; }
+
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
+
         /// <summary>
         /// Gets or sets the crypted password.
         /// </summary>
@@ -29,20 +29,20 @@ namespace Core.Models
         /// Gets or sets the email.
         /// </summary>
         public string Email { get; set; }
-        #endregion
-
-        #region navigation properties
 
         /// <summary>
         /// Gets or sets the role id.
         /// </summary>
         [ForeignKey(nameof(Role))]
         public int RoleId { get; set; }
+        #endregion
+
+        #region navigation properties
 
         /// <summary>
         /// Gets or sets the role.
         /// </summary>
-        public virtual Role Role { get; set; }
+        public Role Role { get; set; }
 
         #endregion
 

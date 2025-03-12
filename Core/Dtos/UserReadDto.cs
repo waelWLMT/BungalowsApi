@@ -12,10 +12,10 @@ namespace Core.Dtos
     {
 
         #region properties
-        /// <summary>
-        /// Gets or sets the user name.
-        /// </summary>
-        public string UserName { get; set; }        
+
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
+
         /// <summary>
         /// Gets or sets the login.
         /// </summary>

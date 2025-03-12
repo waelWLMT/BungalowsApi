@@ -11,6 +11,8 @@ namespace Core.Dtos
     {
 
         #region properties
+
+
         /// <summary>
         /// Gets or sets the code.
         /// </summary>
