@@ -18,11 +18,11 @@ namespace Data
         /// <summary>
         /// The db context.
         /// </summary>
-        private readonly MyDbContext _dbContext;
+        protected readonly MyDbContext _dbContext;
         /// <summary>
         /// The db set.
         /// </summary>
-        private readonly DbSet<T> _dbSet;
+        protected readonly DbSet<T> _dbSet;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Repository"/> class.
