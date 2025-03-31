@@ -36,9 +36,6 @@ var secretKey = Convert.ToBase64String(key); // Store this securely
 CompositionRoot.InjectDependencies(builder.Services, builder.Configuration.GetConnectionString("GestRDVDb"));
 
 
-
-
-
 // add authentication middleware
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -66,6 +63,23 @@ builder.Services
     );
 
 builder.Services.AddAuthorization();
+
+// cors origin
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder                        
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .SetIsOriginAllowed(origin => true) // allow any origin
+                        .AllowCredentials();
+                         
+                    });
+});
+
 
 //// add mediatR
 //builder.Services.AddMediatR(cf => cf.RegisterServicesFromAssemblies(typeof(Program).Assembly, typeof(ServicePattern<object>).Assembly));
@@ -95,7 +109,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// app.UseHttpsRedirection();
+app.UseCors("AllowAll");
+
+app.UseHttpsRedirection();
 
 app.UseAuthentication();
 
