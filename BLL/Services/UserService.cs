@@ -1,6 +1,7 @@
 ﻿using BLL.IServices;
 using Core.Models;
 using Data;
+using Data.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +15,23 @@ namespace BLL.Services
     /// </summary>
     public class UserService : ServicePattern<User>, IUserService
     {
+        private readonly IUserRepository _userRepository;
+        private readonly IUnitOfWork _unitOfwork;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="UserService"/> class.
         /// </summary>
         /// <param name="repository">The repository.</param>
         /// <param name="unitOfWork">The unit of work.</param>
-        public UserService(IRepository<User> repository, IUnitOfWork unitOfWork) : base(repository, unitOfWork)
+        public UserService(IUserRepository userRepository, IUnitOfWork unitOfWork) : base(userRepository, unitOfWork)
         {
+            _userRepository = userRepository;
+            _unitOfwork = unitOfWork;
+        }
+
+        public User GetByEmailOrLogin(string emailLogin)
+        {
+            return _userRepository.GetByEmailOrLogin(emailLogin);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using BLL;
 using BLL.IServices;
 using BLL.Services;
+using BLL.Utils;
 using Data;
 using Data.IRepositories;
 using Data.Repositories;
@@ -41,12 +42,29 @@ namespace Root
             #endregion
 
             #region // Repositories injection
+
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IAdminRepository, AdminRepository>();
+            services.AddScoped<IProprietaireRepository, ProprietaireRepository>();
+            services.AddScoped<ICommercialRepository, CommercialRepository>();
+            services.AddScoped<ILocataireRepository, LocataireRepository>();
+
+
             #endregion
 
             #region // Services injection
 
+            // Utils services
+            services.AddScoped<IPasswordEnryptorDecryptor, PasswordEnryptorDecryptor>();
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+
+            // Services
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<IProprietaireService, ProprietaireService>();
+            services.AddScoped<ICommercialService, CommercialService>();
+            services.AddScoped<ILocataireService, LocataireService>();
 
             #endregion
 

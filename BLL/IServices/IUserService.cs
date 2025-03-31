@@ -9,6 +9,7 @@ namespace BLL.IServices
 {
     public interface IUserService : IServicePattern<User>
     {
+        public User GetByEmailOrLogin(string emailLogin);
 
     }
 }

@@ -22,14 +22,12 @@ namespace Data
         #region Write
         T Insert(T entity);
         void InsertAll(List<T> entities);
-
         bool Delete(T entity);
         bool DeleteAll(List<T> entities);
         T Update(T entity);
         #endregion
 
         #endregion
-
 
         #region ASyncronous
 

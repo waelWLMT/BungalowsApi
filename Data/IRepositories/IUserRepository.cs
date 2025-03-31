@@ -9,6 +9,6 @@ namespace Data.IRepositories
 {
     public interface IUserRepository : IRepository<User>
     {
-
+        public User GetByEmailOrLogin(string emailLogin);
     }
 }

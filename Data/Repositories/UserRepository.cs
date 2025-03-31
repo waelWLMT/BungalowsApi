@@ -19,6 +19,12 @@ namespace Data.Repositories
         /// <param name="ctx">The ctx.</param>
         public UserRepository(MyDbContext ctx) : base(ctx)
         {
+
+        }
+
+        public User GetByEmailOrLogin(string emailLogin)
+        {
+            return _dbSet.FirstOrDefault(x => x.Login == emailLogin || x.Email == emailLogin);
         }
     }
 }

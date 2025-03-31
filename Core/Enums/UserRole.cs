@@ -11,6 +11,7 @@ namespace Core.Enums
         Admin = 1,
         Commerciale = 2,
         Locataire = 3,
-        Proprietaire =4
+        Proprietaire = 4,
+        User = 5
     }
 }
